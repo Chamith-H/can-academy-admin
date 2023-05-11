@@ -49,7 +49,7 @@ const NewCategory =()=> {
                         </div>
                     ))}
 
-                    <button type="submit">Save</button>
+                    <button type="submit">Add</button>
                 </form>
             </div>
         </div>

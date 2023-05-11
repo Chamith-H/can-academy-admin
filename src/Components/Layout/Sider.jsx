@@ -1,68 +1,42 @@
 import "../../Styles/Layout/Sider.css"
 import Logo from "../../Assets/Images/Icons/Logo.png"
+import { useNavigate } from "react-router-dom"
 
 const Sider =( props )=> {
+
+    const navigate = useNavigate();
 
     const tabs = [
         {
             title:'Dashboard',
             icon:'',
-            navigate:'/',
-
-            submenus:[
-                {
-                    name:'',
-                    link:'',
-                    go:''
-                }
-            ]
+            navigate:'',
         },
 
         {
             title:'Courses',
             icon:'',
-            navigate:'/courses',
-
-            submenus:[
-                {
-                    name:'All Courses',
-                    link:'/courses',
-                },
-
-                {
-                    name:'Add New',
-                    link:'/courses/addnew',
-                },
-
-                {
-                    name:'Filters',
-                    link:'/courses/filter',
-                },
-            ]
+            navigate:'courses',
         },
 
         {
             title:'Careers',
             icon:'',
-            navigate:'/careers',
+            navigate:'careers',
         },
 
         {
             title:'Instructors',
             icon:'',
-            navigate:'/instructors',
+            navigate:'instructors',
         },
 
         {
             title:'Students',
             icon:'',
-            navigate:'/students',
+            navigate:'students',
         },
     ]
-
-    const handle_Navigate =( tabData )=> {
-        
-    }
 
     return (
         <div className="Sider">
@@ -72,7 +46,7 @@ const Sider =( props )=> {
 
             <div className="Main-Tabs">
                 {tabs.map((tab) => (
-                    <a href={tab.navigate}><button className="py-3 ps-3" onClick={()=> handle_Navigate(tab)}>{tab.title}</button></a>
+                    <button className="py-3 ps-3" onClick={()=> navigate(tab.navigate)}>{tab.title}</button>
                 ))}
             </div>
         </div>

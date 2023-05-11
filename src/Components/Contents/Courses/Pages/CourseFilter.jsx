@@ -1,26 +1,14 @@
 import "../../../../Styles/Contents/Courses/Pages/CourseFilter.css"
 import { useState, useEffect } from "react";
-import Api from "../../../../Api";
+import Dynamics from "../../../../Dynamics";
 
 const CourseFilter =()=> {
 
     const [categories, setCategories] = useState([''])
 
-    const get_Categories =async()=> {
-        try {
-            const request = new Api;
-            const response = await request.get_Categories();
-            setCategories(response.data)
-            
-        }
-
-        catch(error) {
-            console.log(error)
-        }
-    }
-
     useEffect(() => {
-        get_Categories()
+        const dataSet = new Dynamics;
+        setCategories(dataSet.fetch_Categories())
     }, []);
 
     return (

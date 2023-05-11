@@ -14,6 +14,16 @@ class Api extends Component {
         const _api = '/getCategories';
         return Axios.get(this.server + _api)
     }
+
+    add_SubCategory(data) {  //Add a new category
+        const _api = '/addSubCategory';
+        return Axios.post(this.server + _api, data)
+    }
+
+    get_SubCategories() {  //Get all categories
+        const _api = '/getSubCategories';
+        return Axios.get(this.server + _api)
+    }
 }
 
 export default Api;

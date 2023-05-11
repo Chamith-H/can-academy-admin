@@ -1,27 +1,50 @@
-import { useState } from 'react';
 import './App.css';
-import Header from './Components/Layout/Header';
-import Sider from './Components/Layout/Sider';
+import { useEffect } from 'react';
 import Routings from './Components/Layout/Routings';
+import Api from './Api';
+import Dynamics from './Dynamics';
 
 function App() {
+  const get_Categories =async()=> {
+    try {
+        const request = new Api;
+        const response = await request.get_Categories();
 
-  const [title, setTitle] = useState('');
-  const [options, setOptions] = useState([])
+        if(response != null) {
+            const dynamic = new Dynamics;
+            await dynamic.set_Categories(response.data)
+        }
+    }
 
-  const handle_Sider =( title )=> {
-    setTitle(title)
+    catch(error) {
+        console.log(error)
+    }
   }
 
+  const get_SubCategories =async()=> {
+    try {
+      const request = new Api;
+      const response = await request.get_SubCategories();
+
+      if(response != null) {
+        const dynamic = new Dynamics;
+        await dynamic.set_Subcategories(response.data)
+      }
+    }
+
+    catch(error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+      get_Categories()
+      get_SubCategories()
+  }, []);
+  
   return (
     <div className="App">
-        <div className="Panel">
-            <Sider TabAction={handle_Sider}/>
-        </div>
-
-        <div className="Contents">
-            <Routings/>
-        </div>
+        <Routings/>
     </div>
   );
 }
