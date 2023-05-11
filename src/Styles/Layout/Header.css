@@ -1,0 +1,44 @@
+.Header {
+    position: sticky;
+    top:0;
+    height: 64px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 7px 3px 10px 0px #0000003c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Tab-Options h6 {
+    margin-bottom: 0;
+    font-family: 'RobotoBold';
+    font-size: 18px;
+}
+
+.Admin-Handlers {
+    display: flex;
+    align-items: center;
+}
+
+.Account {
+    border-style: none;
+    background-color: rgba(250, 235, 215, 0);
+    font-size: 32px;
+}
+
+.Notification {
+    border-style: none;
+    background-color: rgba(250, 235, 215, 0);
+    font-size: 21px;
+    padding-bottom: 0;
+}
+
+.Header-Options button {
+    border-style: none;
+    background-color: rgba(250, 235, 215, 0);
+    font-family: 'RobotoGeneral';
+    margin-right: 40px;
+    padding: 0;
+    color: rgb(14, 0, 85);
+}

@@ -1,0 +1,38 @@
+.Brand {
+    height: 64px;
+    width: 100%;
+    background-color: rgb(48,7,105); 
+}
+
+.Main-Tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.Main-Tabs a {
+    text-decoration: none;
+}
+
+.Main-Tabs button {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    align-items: center;
+    border-style: none;
+    font-family: 'RobotoGeneral';
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+.Main-Tabs button:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+.Brand {
+    display: flex;
+    align-items: center;
+}
+
+.Brand img {
+    height: 50px;
+}
