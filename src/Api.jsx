@@ -15,13 +15,23 @@ class Api extends Component {
         return Axios.get(this.server + _api)
     }
 
-    add_SubCategory(data) {  //Add a new category
+    add_SubCategory(data) {  //Add a new subcategory
         const _api = '/addSubCategory';
         return Axios.post(this.server + _api, data)
     }
 
-    get_SubCategories() {  //Get all categories
+    get_SubCategories() {  //Get all subcategories
         const _api = '/getSubCategories';
+        return Axios.get(this.server + _api)
+    }
+
+    add_Course(data) { //Add a new course
+        const _api = '/addCourse';
+        return Axios.post(this.server + _api, data)
+    }
+
+    get_Courses() { //Get all courses
+        const _api = '/getCourses';
         return Axios.get(this.server + _api)
     }
 }

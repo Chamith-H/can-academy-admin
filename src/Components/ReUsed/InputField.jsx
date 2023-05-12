@@ -1,3 +1,5 @@
+import "../../Styles/ReUsed/InputField.css"
+
 const InputField =( props )=> {
     return (
         <div className="InputField">

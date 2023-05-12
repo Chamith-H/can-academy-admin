@@ -1,0 +1,22 @@
+.NewCourse {
+    width: 100%;
+}
+
+.New-Course-Form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.New-Course-Form select, .New-Course-Form input, .New-Course-Form button {
+    width: 100%;
+    height: 35px;
+}
+
+.NewCourse h6 {
+    font-family: 'RobotoMedium';
+    color: black;
+}

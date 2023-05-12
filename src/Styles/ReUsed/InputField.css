@@ -1,0 +1,23 @@
+.InputField {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.InputField input::placeholder {
+    font-family: 'Roboto';
+    color: rgb(155, 155, 155);
+    font-size: 15px;
+}
+
+.InputField input {
+    width: 100%;
+    height: 35px;
+    border-style: solid;
+    border-color: rgb(206, 206, 206);
+    border-width: 1px;
+    border-radius: 0px;
+    padding-left: 10px;
+    font-family: 'RobotoGeneral';
+    outline: none;
+}

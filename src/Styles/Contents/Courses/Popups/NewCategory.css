@@ -1,0 +1,17 @@
+.NewCategory {
+    width: 100%;
+}
+
+.New-Category-Form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.NewCategory h6 {
+    font-family: 'RobotoMedium';
+    color: black;
+}

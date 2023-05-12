@@ -1,0 +1,22 @@
+.NewSubCategory {
+    width: 100%;
+}
+
+.New-Subcategory-Form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.New-Subcategory-Form select, .New-Subcategory-Form input, .New-Subcategory-Form button {
+    width: 100%;
+    height: 35px;
+}
+
+.NewSubCategory h6 {
+    font-family: 'RobotoMedium';
+    color: black;
+}

@@ -1,6 +1,8 @@
+import "../../../../Styles/Contents/Courses/Popups/NewCategory.css"
 import { useState } from "react"
 import InputField from "../../../ReUsed/InputField"
 import Api from "../../../../Api"
+import SubmitButton from "../../../ReUsed/SubmitButton"
 
 const NewCategory =()=> {
     const [enter, setEnter] = useState({ID:'', name:'', image:''})
@@ -17,7 +19,7 @@ const NewCategory =()=> {
 
         {
             name:'image',
-            placeholder:'Image'
+            placeholder:'Image ID'
         },
     ]
 
@@ -36,22 +38,20 @@ const NewCategory =()=> {
     }
 
     return (
-        <div className="NewCategory">
-            <div className="New-Category-Form">
-                <form onSubmit={save_Data}>
+        <div className="NewCategory py-5 px-5">
+                <h6 className="mb-3">Add new category</h6>
+                <form onSubmit={save_Data} className="New-Category-Form">
                     {inputs.map((input) => (
-                        <div className="Input-Field-Send">
-                            <InputField
-                                Placeholder={input.placeholder}
-                                Value={enter[input.name]}
-                                Entered={(e)=> setEnter({...enter, [input.name]:e.target.value})}
-                            />
-                        </div>
+                        <InputField
+                            Placeholder={input.placeholder}
+                            Value={enter[input.name]}
+                            Entered={(e)=> setEnter({...enter, [input.name]:e.target.value})}
+                        />
                     ))}
 
-                    <button type="submit">Add</button>
+                    <SubmitButton Title="Add Category"/>
                 </form>
-            </div>
+     
         </div>
     )
 }

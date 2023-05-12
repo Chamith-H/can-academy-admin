@@ -12,8 +12,9 @@
 
 .Tab-Options h6 {
     margin-bottom: 0;
-    font-family: 'RobotoBold';
-    font-size: 18px;
+    font-family: 'RobotoMedium';
+    font-size: 22px;
+    color: black;
 }
 
 .Admin-Handlers {

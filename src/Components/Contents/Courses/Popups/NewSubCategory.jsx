@@ -1,8 +1,11 @@
+import "../../../../Styles/Contents/Courses/Popups/NewSubCategory.css"
 import Dynamics from "../../../../Dynamics"
 import { useEffect, useState } from "react";
 import InputField from "../../../ReUsed/InputField";
 
 import Api from "../../../../Api";
+import SubmitButton from "../../../ReUsed/SubmitButton";
+import SelectList from "../../../ReUsed/SelectList";
 
 const NewSubCategory =()=> {
     const [categories, setCategories] = useState([''])
@@ -40,26 +43,26 @@ const NewSubCategory =()=> {
     }
 
     return (
-        <div className="NewSubCategory">
-            <form onSubmit={save_Data}>
-                <select value={enter.asigned} onChange={(e)=> setEnter({...enter, asigned:e.target.value})}>
-                    <option value={0}>Select Category</option>
-                    {categories.map((category) => (
-                        <option value={category.ID}>{category.name}</option>
-                    ))}
-                </select>
+        <div className="NewSubCategory py-5 px-5">
+            <h6 className="mb-3">Add new subcategory</h6>
+            <form onSubmit={save_Data} className="New-Subcategory-Form">
+                
+                <SelectList 
+                    List={categories}
+                    Audiance="category"
+                    Enable={true}
+                    select_Action={(e)=> setEnter({...enter, asigned:e.target.value})}
+                />
 
                 {inputs.map((input) => (  
-                    <div className="Input-Field-Send">
-                        <InputField
-                            Placeholder={input.placeholder}
-                            Value={enter[input.name]}
-                            Entered={(e)=> setEnter({...enter, [input.name]:e.target.value})}
-                        />
-                    </div>
+                    <InputField
+                        Placeholder={input.placeholder}
+                        Value={enter[input.name]}
+                        Entered={(e)=> setEnter({...enter, [input.name]:e.target.value})}
+                    />
                 ))}
 
-                <button type="submit">Add</button>
+                <SubmitButton Title="Add Subcategory"/>
             </form>
         </div>
     )

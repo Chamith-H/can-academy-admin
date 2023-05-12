@@ -37,9 +37,26 @@ function App() {
     }
   }
 
+  const get_Courses =async()=> {
+    try {
+      const request = new Api;
+      const response = await request.get_Courses();
+
+      if(response != null) {
+        const dynamic = new Dynamics;
+        await dynamic.set_Courses(response.data)
+      }
+    }
+
+    catch(error) {
+      console.log(error)
+    }
+  }
+
   useEffect(() => {
       get_Categories()
       get_SubCategories()
+      get_Courses()
   }, []);
   
   return (

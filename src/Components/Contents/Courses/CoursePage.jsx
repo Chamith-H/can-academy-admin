@@ -24,7 +24,7 @@ const CoursePage =()=> {
 
     return (
         <div className="CoursePage">
-            <Header Options={options}/>
+            <Header Options={options} Title="Courses"/>
 
             <div className="Course-Routings py-2 px-3">
                 <Outlet/>
